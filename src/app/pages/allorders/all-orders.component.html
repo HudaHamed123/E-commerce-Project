@@ -1,0 +1,84 @@
+<section class="w-3/4 mx-auto rounded shadow-md bg-gray-100 p-3 my-10">
+    <h2 class=" text-4xl  text-gray-600 text-center pb-5 pt-10"> All orders</h2>
+    @for (order of allOrdersList; track $index) {
+
+        <div class="space-y-5">
+           
+            <div class="border p-5 mb-5">
+                <h3 class="text-lg capitalize font-semibold">Order:</h3>
+                @for (cartOrder of order.cartItems ; track $index) {
+                    <div class="flex border-b items-center py-4">
+                        <div class="w-1/6">
+                            <img class="w-full pr-4" [src]="cartOrder.product.imageCover" [alt]="cartOrder.product.title" title="cartOrder.product.title">
+                        </div>
+        
+                      
+                        <div class="w-11/12 flex justify-between">
+                            <div>
+                                <h3 class="text-sm font-semibold text-blue-600">{{cartOrder.product.title}}</h3>
+                                <p class="capitalize mb-0">{{cartOrder.count}}</p>
+                                <p class="capitalize mb-0">Price: {{cartOrder.price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                   <div class="py-3 w-3/4 mx-auto space-y-1 text-center">
+                    <p class="capitalize mb-0 p-1 text-sm">Is Delivered: 
+                        <span class="text-white rounded-md font-semibold p-1" [class]=" order.isDelivered==true ? 'bg-green-500': 'bg-red-600'">{{order.isDelivered}}</span>
+                    </p>
+                    <p class="capitalize mb-0 p-1 text-sm">Is Paid: 
+                        <span class="text-white rounded-md font-semibold p-1" [class]=" order.isPaid==true ? 'bg-green-500': 'bg-red-600'">{{order.isPaid}}</span>
+                    </p>
+                    <p class="capitalize mb-0 p-1 text-sm">Payment Method Type: <span class="font-semibold">{{order.paymentMethodType}}</span></p>
+                    <p class="capitalize mb-0 p-1 text-sm">Total Order Price: <span class="font-semibold">{{order.totalOrderPrice}}</span></p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    }
+  
+</section>
